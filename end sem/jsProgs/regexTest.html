@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regexTest</title>
+
+    <script>
+        function validate() {
+            var pass = document.getElementById('pass').value;
+            var confpass = document.getElementById('confpass').value;
+
+            if(pass != confpass) alert("issue with the passkeys!!");
+            else alert("everything is fine, go ahead!!")
+        }
+    </script>
+</head>
+<body>
+    <form action="get">
+        <table>
+            <tr>
+                <td>name: <input type="text" pattern="[A-Z][a-zA-Z ]+" required></td>
+            </tr>
+
+            <tr>
+                <td>student ID:  <input type="number" pattern="[1-9][0-9]{6}" required></td>
+            </tr>
+
+            <tr>
+                <td>email ID: <input type="text" pattern="[a-zA-Z0-9_]+[@][a-zA-Z]+[.]com" required></td>
+            </tr>
+
+            <tr>
+                <td>mobile number: <input type="number" pattern="[1-9][0-9]+{9}" required></td>
+            </tr>
+
+            <tr>
+                <td>password: <input type="password" pattern="[a-zA-Z0-9]{7}" required id="pass"></td>
+            </tr>
+
+            <tr>
+                <td>confirm password: <input type="password" pattern="[a-zA-Z0-9]{7}" required id="confpass"></td>
+            </tr>
+
+            <tr>
+                <td><input type="submit" value="submit" onclick="validate()"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

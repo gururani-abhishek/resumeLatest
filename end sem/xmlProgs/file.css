@@ -1,0 +1,6 @@
+title, author, ISBN, edition, price {
+    display: block;
+}
+title {
+    color: red;
+}

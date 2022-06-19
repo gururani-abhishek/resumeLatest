@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore [
+    <!ELEMENT bookstore (book+)>
+    <!ELEMENT book (title, author, ISBN, publisher, edition, price)>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT author (#PCDATA)>
+    <!ELEMENT ISBN (#PCDATA)>
+    <!ELEMENT publisher (#PCDATA)>
+    <!ELEMENT edition (#PCDATA)>
+    <!ELEMENT price (#PCDATA)>
+]>
+
+<bookstore>
+    <book>
+        <title>Let Us C</title>
+        <author>Yashwant Kanetkar</author>
+        <ISBN>9800182WT9908</ISBN>
+        <publisher>Bharti Bhuvan</publisher>
+        <edition>8th</edition>
+        <price>234</price>
+    </book>
+
+    <book>
+        <title>Let Us C</title>
+        <author>Yashwant Kanetkar</author>
+        <ISBN>9800182WT9908</ISBN>
+        <publisher>Bharti Bhuvan</publisher>
+        <edition>8th</edition>
+        <price>234</price>
+    </book>
+</bookstore>

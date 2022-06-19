@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <form action="get" onsubmit="validate()">
+            <table>
+                <tr>
+                    <td>name: </td>
+                    <td><input type="text" pattern = "[a-zA-Z ]+" required></td>
+                </tr>
+
+                <tr>
+                    <td>student id: </td>
+                    <td><input type="text" pattern="[0-9]{6}" required></td>
+                </tr>
+
+                <tr>
+                    <td>email id: </td>
+                    <td><input type="text" pattern="[a-zA-Z._-]+[@][a-zA-Z]+[.][a-zA-Z]+" required></td>
+                </tr>
+
+                <tr>
+                    <td>mobile number: </td>
+                    <td><input type="text" pattern="[0-9]{10}" required></td>
+                </tr>
+
+                <tr>
+                    <td>password: </td>
+                    <td><input type="password" pattern="[a-zA-Z0-9]+" id="pass" required></td>
+                </tr>
+
+                <tr>
+                    <td>confirm password: </td>
+                    <td><input type="password" pattern="[a-zA-Z0-9]+" id="confPass" required></td>
+                </tr>
+
+                <tr>
+                    <td><input type="submit" value="submit"></td>
+                </tr>
+            </table>
+        </form>
+
+        <script>
+            function validate() {
+                var pass = document.getElementById('pass').value;
+                var confPass = document.getElementById('confPass').value;
+
+                if(pass != confPass) alert("issue with the passkeys, try again!!");
+                alert("looks good to me");
+            }
+        </script>
+    </body>
+</html>

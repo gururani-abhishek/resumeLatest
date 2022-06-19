@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>countDown</title>
+        <script>
+            var id, flag = 1, count = 0;
+
+            function startCountdown() {
+                if(flag) {
+                    id = setInterval(start, 1000);
+                    flag = 0;
+                }
+            }
+
+            function start() {
+                count++;
+                document.getElementById('count').innerHTML  = count;
+            }
+
+            function stopCountdown() {
+                if(!flag) {
+                    clearInterval(id);
+                    flag = 1;
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <table>
+            <td><input type="submit" id="start" value="start" onclick="startCountdown()"></td>
+            <td><input type="submit" id="stop" value="stop" onclick="stopCountdown()"></td>
+            <td id="count">0</td>
+        </table>
+    </body>
+</html>

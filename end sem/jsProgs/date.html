@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>dateShow</title>
+        <script>
+            function wishMe() {
+                var obj = new Date();
+                var hours = obj.getHours();
+            
+                if(hours >=6 && hours<12) document.getElementById('wish').innerHTML = "GOOD MORNING";
+                else if(hours >=12 && hours <16) document.getElementById('wish').innerHTML = "GOOD EVENING";
+                else document.getElementById('wish').innerHTML = "GOOD NIGHT";
+            }
+        </script>
+    </head>
+
+    <body>
+        <table>
+            <td><input type="submit" onclick="wishMe()" value="wish me"></td>
+            <td id="wish"></td>
+        </table>
+    </body>
+
+</html>

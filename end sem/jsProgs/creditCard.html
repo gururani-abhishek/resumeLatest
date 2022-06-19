@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>creditCard</title>
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+
+    <body>
+        <form action="GET">
+        <table border="1">
+            <tr>
+                <td>Card Number: </td>
+                <td><input type="text" id="cardNumber"></td>
+            </tr>
+
+            <tr>
+                <td>CVV: </td>
+                <td><input type="text" id="cvv" pattern="[1-9]{3}"></td>
+            </tr>
+
+            <tr>
+                <td>Start Date: </td>
+                <td><input type="text" id="sD"></td>
+            </tr>
+
+            <tr>
+                <td>Expiry Date: </td>
+                <td><input type="text" id="eD"></td>
+            </tr>
+
+            <tr>
+                <td><input type="submit" value="submit" onclick="validate()"></td>
+                <td id="result"></td>
+            </tr>
+
+        </table>
+    </form> 
+        <script>
+            function validate() {
+                var flag = 0;
+
+                var cardNumber = document.getElementById('cardNumber').value;
+                if(cardNumber.length <16) flag = 1;
+                var firstTwo = "";
+                firstTwo += cardNumber[0];
+                firstTwo += cardNumber[1];
+
+                if(firstTwo != "53" && firstTwo != "34") flag = 1;
+
+                var cvv = document.getElementById('cvv').value;
+                if(cvv.length != 3) flag = 1;
+
+                var sD = document.getElementById('sD').value;
+                if(sD[2] != '/') flag = 1;
+
+                var eD = document.getElementById('eD').value;
+                if(eD[2] != '/') flag = 1;
+
+                if(flag) document.getElementById('result').innerHTML =  "invalid";
+                else document.getElementById('result').innerHTML = "valid";
+
+            }
+        </script>
+        
+    </body>
+
+</html>
